@@ -4,56 +4,54 @@
 </head>
 
 <body>
-    {{> main}}
+  {{> main}}
 </body>
 
 <template name="main">
-    <div class="container">
-     <div class="page-header">
-        <h1>Dropbox Browser <small>Select files and click 'Show Selected' to get their URLs</small></h1></div>
-        {{greeting}}
-
-        <ul class="breadcrumb">
-            {{#each currentPath}}
-            <li><a href="#" data-path="{{path}}">{{name}}</a> <span class="divider">/</span></li>
-            {{/each}}
-        </ul>
-        <div class="row">
-          <ul class="thumbnails">
-            {{#each entries}}
-            <li class="entry selectable span3" data-path="{{path}}">
-                <div class="thumbnail">
-                    <div class="{{#if isFolder}}folder{{/if}} {{#if isFile}}file{{/if}}">
-                        <div style="height:128px">
-                          {{#if thumbnailUrl}}
-                          <img class="img-circle" src="{{getThumbnailUrl .}}" />
-                          {{else}}
-                          <img src="" />
-                          {{/if}}
-                      </div>
-                  </div>
-                  <h3>{{name}}</h3>
+  <div class="container">
+    <div class="page-header">
+      <h1>Dropbox Browser <small>Select files and click 'Show Selected' to get their URLs</small></h1>
+    </div>
+    <ul class="breadcrumb">
+      {{#each currentPath}}
+      <li><a href="#" data-path="{{path}}">{{name}}</a><span class="divider">/</span></li>
+      {{/each}}
+    </ul>
+    <div class="row">
+      <ul class="thumbnails">
+        {{#each entries}}
+        <li class="entry selectable span3" data-path="{{path}}">
+          <div class="thumbnail">
+            <div class="{{#if isFolder}}folder{{/if}} {{#if isFile}}file{{/if}}">
+              <div style="height:128px">
+                {{#if thumbnailUrl}}
+                <img class="img-circle" src="{{getThumbnailUrl .}}" />
+                {{else}}
+                <img src="" />
+                {{/if}}
               </div>
-          </li>
-          {{/each}}
+            </div>
+            <h3>{{name}}</h3>
+          </div>
+        </li>
+        {{/each}}
       </ul>
+    </div>
+    <div class="well" style="margin-top:25px">
+      <button id="showSelectedButton" class="btn-primary">Show Selected</button>
+      <label class="radio">
+        <input type="radio" name="linkType" id="previewLink" value="0" checked>
+        Preview Link
+      </label>
+      <label class="radio">
+        <input type="radio" name="linkType" id="directLink" value="1">
+        Direct Link
+      </label>
+      {{#each result}}
+      <div>
+        <a href="{{url}}">{{url}}</a>
+      </div>
+      {{/each}}
+    </div>
   </div>
-  <div class="well" style="margin-top:25px">
-    <button id="showSelectedButton" class="btn-primary">Show Selected</button>
-    <label class="radio">
-      <input type="radio" name="linkType" id="previewLink" value="0" checked>
-      Preview Link
-  </label>
-  <label class="radio">
-      <input type="radio" name="linkType" id="directLink" value="1">
-      Direct Link
-  </label>
-  {{#each result}}
-  <div>
-    <a href="{{url}}">{{url}}</a>
-</div>
-{{/each}}
-</div>
-
-</div>
 </template>
