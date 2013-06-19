@@ -1,0 +1,41 @@
+/* CSS declarations go here */
+
+.entry.selectable
+{
+    cursor: pointer;
+}
+
+.entry.selected
+{
+    background-color: #FCF87F;
+}
+.entry.selected:hover
+{
+    background-color: #FCF87F;
+}
+.entry:hover
+{
+    background-color: #F9F7CD;
+}
+
+
+.entry .folder
+{
+    background: url("http://icons.iconarchive.com/icons/deleket/sleek-xp-basic/128/Folder-icon.png");
+    background-repeat: no-repeat;
+    height: 128px;
+    width: 128px;
+}
+
+.entry .file
+{
+    background: url("http://icons.iconarchive.com/icons/deleket/sleek-xp-basic/128/Document-Blank-icon.png");
+    background-repeat: no-repeat;
+    height: 128px;
+    width: 128px;
+}
+
+.entry img
+{
+    margin: 30px;
+}
