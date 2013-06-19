@@ -15,6 +15,8 @@ Dropbox file browser written in [CoffeeScript](coffeescript.org) on top of [Mete
 * Click the 'Show Selected' button to display a list of links pointing to the files on Dropbox
 ** Radio buttons allow to choose between preview or direct links
 
+========
+
 ## Limitations
 
 * Forces the user to log into Dropbox when the application is loaded.
