@@ -14,6 +14,7 @@ Dropbox file browser written in [CoffeeScript](http://coffeescript.org) on top o
 * Click to select/deselect multiple files
 * Click the 'Show Selected' button to display a list of links pointing to the files on Dropbox
 ** Radio buttons allow to choose between preview or direct links
+* Login using Oauth
 
 ## Limitations
 
