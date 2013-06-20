@@ -2,6 +2,7 @@
 
 Dropbox file browser written in [CoffeeScript](http://coffeescript.org) on top of [Meteor](http://meteor.com) using [dropbox-js](http://github.com/dropbox/dropbox-js)
 
+Live version running at http://dropbox-browser.meteor.com
 
 
 ## Features
